@@ -159,4 +159,7 @@ body {
         right: 0 !important;
     }
 
+    .navbar {
+        min-height: 80px !important;
+    }
 }

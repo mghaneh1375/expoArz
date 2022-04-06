@@ -1,0 +1,162 @@
+:root {
+    --main-color: rgb(250, 144, 32);
+    --textFontColor: #252525;
+    --header2FontSize: 22px;
+    --headerSize: 36px;
+    --textSize1: 17px;
+    --fontFamily: Roboto;
+    --selectedColor: #04438A;
+    --hoverColor: #60A9fC;
+    --unSelectedColor: #d3E2F2
+}
+
+input {
+    padding: 5px;
+    direction: ltr;
+    font-family: var(--fontFamily);
+    height: 40px !important;
+}
+
+body {
+    direction: rtl;
+}
+
+.content {
+    margin-top: 120px;
+}
+
+.navbar {
+    top: 0;
+    background-color: white;
+    z-index: 10000;
+    width: 100%;
+    margin-bottom: 0 !important;
+    min-height: 95px !important;
+    position: fixed !important;
+}
+
+#logo {
+    position: fixed;
+    top: 10px;
+    left: 20px;
+    margin-left: 22px;
+    z-index: 50000;
+}
+
+#logo img {
+    width: 100px;
+    z-index: 50000;
+}
+
+.navbar > div {
+    padding-right: 75px;
+    padding-left: 75px;
+    max-width: 100%;
+    margin: 0 auto !important;
+}
+
+.navbar ul {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.navbar li {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.navbar a {
+    color: black !important;
+    text-decoration: none !important;
+    font-family: var(--fontFamily) !important;
+}
+
+.navbar .selectedNav {
+    color: var(--main-color) !important;
+    /*border-bottom: 1px solid var(--main-color);*/
+}
+
+.navbar .selectedNav::after {
+    content: ''; /* required to display pseudo elements */
+    height: 2px; /* this works like a border-width */
+    width: auto; /* you can use a percentage of parent or fixed px value */
+    background: var(--main-color);; /* the color of border */
+    position: absolute;
+    bottom: 0; /* position it at the bottom of parent */
+    margin: 0 auto; left: 15px; right: 15px; /* horizontal centering */
+}
+
+.loader-div {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: calc(50% - 40px);
+    left: calc(50% - 40px);
+    z-index: 1000000002 !important;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid var(--main-color);
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.blur {
+    position: absolute;
+    top: 0;
+    height: calc(100%);
+    width: 100%;
+    left: 0;
+    background-color: rgba(166,166,166,0.72);
+    z-index: 100000000 !important;
+}
+
+@media only screen and (max-width: 767px) {
+
+    .navbar ul {
+        display: block;
+        margin-right: 0;
+        padding-right: 0;
+    }
+
+    .nav > li {
+        display: inline-block !important;
+    }
+
+    .nav > li > a {
+        padding: 7px 3px !important;
+        font-size: 0.7em;
+    }
+
+    .container-fluid {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+        width: 100% !important;
+    }
+
+    #logo {
+        left: 0 !important;
+        margin-left: 15px !important;
+        top: 3px !important;
+    }
+
+    #logo img {
+        width: 80px !important;
+    }
+
+    .navbar .selectedNav::after {
+        left: 0 !important;
+        right: 0 !important;
+    }
+
+}

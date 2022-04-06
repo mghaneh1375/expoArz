@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./assets/css/font.css">
+    <link rel="stylesheet" href="./assets/css/style.css?v=1.7">
+    <link rel="stylesheet" href="./assets/css/calc.css?v=1.2">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="./assets/images/logo.png">
+    <title>اکسپوارز</title>
+
+    <style>
+
+        @media only screen and (max-width: 767px) {
+            .col-xs-12 a {
+                font-size: 17px;
+                display: block;
+                margin-top: 20px;
+            }
+
+            .col-xs-12 p {
+                font-size: 16px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container-fluid" style="background-color: #f9f9f9; min-height: 100vh; overflow: hidden">
+
+    <a id="logo" href="./index.html"><img src="./assets/images/logo.png"></a>
+
+    <nav id="navbar" class="navbar"></nav>
+
+    <div class="row" style="padding-left: 30px; padding-right: 30px">
+
+        <center class="col-xs-12">
+
+            <h1>ارتباط با ادمین</h1>
+
+            <p style="margin-top: 100px">
+                ارتباط با ادمین گروه های کرون نروژ، سوئد و دانمارک
+            </p>
+            <a target="_blank" href="https://t.me/ExpoArz1">ExpoArz1</a>
+
+            <p style="margin-top: 20px">
+                ارتباط با ادمین گروه های یورو، پوند و دلار کانادا و آمریکا و لیر ترکیه
+            </p>
+            <a target="_blank" href="https://t.me/ExpoArz2">ExpoArz2</a>
+
+            <p style="margin-top: 20px">
+                ارتباط با ادمین گروه تتر و دلار استرالیا
+            </p>
+            <a target="_blank" href="https://t.me/ExpoArz3">ExpoArz3</a>
+
+            <p style="margin-top: 20px">
+                کانال اطلاع رسانی اکسپوارز
+            </p>
+            <a target="_blank" href="https://t.me/ExpoArz">ExpoArz</a>
+
+        </center>
+    </div>
+</div>
+
+<script>
+    $(function(){
+        $("#navbar").load("nav.html?v=1.2", function () {
+            $("#contactNav").addClass("selectedNav");
+        });
+    });
+</script>
+
+</body>

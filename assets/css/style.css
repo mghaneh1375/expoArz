@@ -7,14 +7,14 @@
     --fontFamily: Roboto;
     --selectedColor: #04438A;
     --hoverColor: #60A9fC;
-    --unSelectedColor: #d3E2F2
+    --unSelectedColor: #d3E2F2;
 }
 
 input {
     padding: 5px;
     direction: ltr;
     font-family: var(--fontFamily);
-    height: 40px !important;
+    height: 35px !important;
 }
 
 body {
@@ -22,7 +22,7 @@ body {
 }
 
 .content {
-    margin-top: 120px;
+    margin-top: 110px;
 }
 
 .navbar {

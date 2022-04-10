@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./assets/css/font.css">
-    <link rel="stylesheet" href="./assets/css/style.css?v=1.8">
-    <link rel="stylesheet" href="./assets/css/calc.css?v=1.6">
+    <link rel="stylesheet" href="./assets/css/style.css?v=1.9">
+    <link rel="stylesheet" href="./assets/css/calc.css?v=1.7">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -40,7 +40,7 @@
 
                 <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
 
-                    <input tabindex="1" onkeypress="return isNumber(event)" onkeyup="calc()" id="in1" type="text">
+                    <input tabindex="1" onkeydown="return del(event, 'in1')" onkeyup="isNumberInPhone(event, 'in1'); calc()" id="in1" type="text">
 
                     <div class="btn-group" role="group">
                         <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -49,12 +49,12 @@
                         </button>
                         <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
 
-                            <a class="dropdown-item">کرون نروژ</a>
-                            <a class="dropdown-item">کرون سوئد</a>
-                            <a class="dropdown-item">کرون دانمارک</a>
-                            <a class="dropdown-item">یورو</a>
-                            <a class="dropdown-item">پوند</a>
-                            <a class="dropdown-item">دلار استرالیا</a>
+                            <a data-href="https://t.me/ExpoArz1" data-contact="ارتباط با ادمین کرون نروژ" class="dropdown-item">کرون نروژ</a>
+                            <a data-href="https://t.me/ExpoArz1" data-contact="ارتباط با ادمین کرون سوئد" class="dropdown-item">کرون سوئد</a>
+                            <a data-href="https://t.me/ExpoArz1" data-contact="ارتباط با ادمین کرون دانمارک" class="dropdown-item">کرون دانمارک</a>
+                            <a data-href="https://t.me/ExpoArz2" data-contact="ارتباط با ادمین یورو" class="dropdown-item">یورو</a>
+                            <a data-href="https://t.me/ExpoArz2" data-contact="ارتباط با ادمین پوند" class="dropdown-item">پوند</a>
+                            <a data-href="https://t.me/ExpoArz3" data-contact="ارتباط با ادمین دلار استرالیا" class="dropdown-item">دلار استرالیا</a>
 
                         </div>
                     </div>
@@ -71,7 +71,7 @@
 
                 <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
 
-                    <input tabindex="2" onkeypress="return isJustNumber(event)" onkeyup="calc()" id="in2" type="text">
+                    <input tabindex="2" onkeydown="return del(event, 'in2')" onkeyup="isJustNumberInPhone(event, 'in2'); calc()" id="in2" type="text">
 
                     <div class="btn-group" role="group">
                         <button disabled type="button" class="btn btn-secondary">
@@ -114,7 +114,7 @@
 
                 <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
 
-                    <input tabindex="3" id="result" onkeypress="return isJustNumber(event)" onkeyup="calcRev()" type="text">
+                    <input tabindex="3" id="result" onkeydown="return del(event, 'result')" onkeyup="isJustNumberInPhone(event, 'result'); calcRev()" type="text">
 
                     <div class="btn-group" role="group">
                         <button disabled type="button" class="btn btn-secondary">
@@ -122,6 +122,11 @@
                         </button>
                     </div>
                 </div>
+
+                <div class="col-xs-12 admin-section">
+                    <a id="admin"></a>
+                </div>
+
             </div>
 
         </center>
@@ -138,7 +143,7 @@
     <div id="loader" class="loader"></div>
 </div>
 
-<script src="assets/script/script.js?v=1.5"></script>
+<script src="assets/script/script.js?v=2.0"></script>
 
 <script>
     $(function(){

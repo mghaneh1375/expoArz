@@ -361,7 +361,7 @@ $(document).ready(function () {
 
     var firstChoice = $(".dropdown-item:first-child");
 
-    $("#admin").attr("href", firstChoice).text(firstChoice.attr("data-contact"));
+    $("#admin").attr("href", firstChoice.attr("data-href")).text(firstChoice.attr("data-contact"));
 
     $(".dropdown-item").on("click", function () {
         $("#btnGroupDrop1Val").text($(this).text());

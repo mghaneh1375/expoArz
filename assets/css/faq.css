@@ -141,11 +141,11 @@
     .btn-link:hover{color:#0056b3;text-decoration:underline;background-color:transparent;border-color:transparent;}
     .btn-link:focus{text-decoration:underline;border-color:transparent;box-shadow:none;}
     .btn-link:disabled{color:#6c757d;pointer-events:none;}
-    .fade{transition:opacity .15s linear;}
+    .fade:not(.tooltip){transition:opacity .15s linear;}
     @media screen and (prefers-reduced-motion:reduce){
-        .fade{transition:none;}
+        .fade:not(.tooltip){transition:none;}
     }
-    .fade:not(.show){opacity:0;}
+    .fade:not(.show):not(.tooltip){opacity:0;}
     .collapse:not(.show){display:none;}
     .nav{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;padding-left:0;margin-bottom:0;list-style:none;}
     .nav-link{display:block;padding:.5rem 1rem;}
@@ -161,7 +161,7 @@
     .card-body{-ms-flex:1 1 auto;flex:1 1 auto;padding:1.25rem; font-family: var(--fontFamily)}
     .card-header{padding:.75rem 1.25rem;margin-bottom:0;background-color:rgba(0,0,0,.03);border-bottom:1px solid rgba(0,0,0,.125);}
     .card-header:first-child{border-radius:calc(.25rem - 1px) calc(.25rem - 1px) 0 0;}
-    .mb-0{margin-bottom:0!important;}
+    .mb-0{margin-bottom:0!important; position: relative}
     @media print{
         *,:after,:before{text-shadow:none!important;box-shadow:none!important;}
         a:not(.btn){text-decoration:underline;}
@@ -207,7 +207,7 @@
     .faq_content .tab-pane .card .card-header .btn.collapsed{color:#576370!important;}
     .faq_content .tab-pane .card .card-body{padding-bottom:20px;}
     #myTabContent.tab-content>.tab-pane{display:block;}
-    #myTabContent .fade:not(.show){position:absolute;width:100%;visibility:hidden;}
+    #myTabContent .fade:not(.show):not(.tooltip){position:absolute;width:100%;visibility:hidden;}
     @media (min-width:1250px){
         .container{max-width:1200px;}
     }
@@ -226,7 +226,7 @@
     .faq_tab .nav-item .nav-link.active:before{width:100%;}
     .faq_content .tab-pane .card{border:0;border-radius:0;background:0 0;border-bottom:1px solid #e4e0ee;}
     .faq_content .tab-pane .card .card-header{padding:0;border:0;background:0 0;}
-    .faq_content .tab-pane .card .card-header .btn{color:var(--main-color); text-decoration:none; display:block;width:100%;text-align:right; font-family: var(--fontFamily); direction: rtl; padding:20px 30px 20px 0;position:relative;white-space:normal;}
+    .faq_content .tab-pane .card .card-header .btn{color:var(--main-color); text-decoration:none; display:block;float: right; max-width: calc(100% - 102px); text-align:right; font-family: var(--fontFamily); direction: rtl; padding:20px 30px 20px 0;position:relative;white-space:normal;}
     .faq_content .tab-pane .card .card-header .btn i{position:absolute;right:0;top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%);display:none;font-size:20px;}
     .faq_content .tab-pane .card .card-header .btn i+i{display:block;}
     .faq_content .tab-pane .card .card-header .btn.collapsed{color:#576370;}
@@ -326,6 +326,34 @@ h5{font-display:swap;}
     font-weight: bolder;
 }
 
+.copy {
+    float: right;
+    cursor: pointer;
+    padding: 20px 30px 20px 0;
+    font-family: var(--fontFamily);
+    font-weight: bold;
+}
+.copy span {
+    font-size: 9px;
+}
+
+.copy img {
+    width: 12px;
+}
+
+.tooltip-inner {
+    font-family: var(--fontFamily) !important;
+}
+
+.tooltip.top .tooltip-arrow {
+    bottom: -6px !important;
+}
+
+.tooltip {
+    top: -10px !important;
+    width: 60px !important;
+    height: 27px !important;
+}
 
 @media only screen and (max-width: 767px) {
 
@@ -366,4 +394,5 @@ h5{font-display:swap;}
         overflow-y: auto;
         overflow-x: hidden;
     }
+    .faq_content .tab-pane .card .card-header .btn{width: calc(100% - 102px);}
 }

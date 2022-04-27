@@ -44,7 +44,66 @@ $(document).ready(function () {
 
     }
 
+    var base_url = "https://expoarz.com/faq.html?section=";
+    // section=1&question=1
+
+    $('div[data-toggle="tooltip"]').tooltip({
+        animated: 'fade',
+        placement: 'top',
+        trigger: 'manual'
+    }).on('click', function () {
+        $(this).tooltip('show');
+        var node = $(this);
+        var parentId = node.parent().parent().attr("id");
+        var num = parseInt(parentId.match(/\d+/g)[0]) + 1;
+        var letr = parentId.match(/[a-zA-Z\-]+/g)[0];
+
+        var section = (letr === "general") ? 1 :
+            (letr === "sellers-buyers") ? 2 :
+                (letr === "transfer-methods") ? 3 : 4;
+
+        copyTextToClipboard(base_url + section + "&question=" + num);
+        setTimeout(function () {
+            node.tooltip('hide');
+        }, 1500);
+    });
+
 });
+function fallbackCopyTextToClipboard(text) {
+
+    var textArea = document.createElement("textarea");
+    textArea.value = text;
+
+    // Avoid scrolling to bottom
+    textArea.style.top = "0";
+    textArea.style.left = "0";
+    textArea.style.position = "fixed";
+
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+
+    try {
+        document.execCommand('copy');
+    } catch (err) {
+        console.error('Fallback: Oops, unable to copy', err);
+    }
+
+    document.body.removeChild(textArea);
+}
+
+function copyTextToClipboard(text) {
+
+    if (!navigator.clipboard) {
+        fallbackCopyTextToClipboard(text);
+        return;
+    }
+    navigator.clipboard.writeText(text).then(function() {
+        console.log('Async: Copying to clipboard was successful!');
+    }, function(err) {
+        console.error('Async: Could not copy text: ', err);
+    });
+}
 
 function select(node) {
     $(".tab-pane").removeClass("show").removeClass("active").removeClass("in");

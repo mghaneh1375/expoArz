@@ -47,6 +47,11 @@
 
     <style>
 
+        .contact-us {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
         .contact-us p {
             margin-top: 20px;
             height: auto;
@@ -70,21 +75,40 @@
 
         @media only screen and (max-width: 767px) {
 
+            .contact-us-row .col-xs-12 {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+
+            .contact-us-row {
+                padding-right: 5px !important;
+                padding-left: 5px !important;
+            }
+
             .contact-us .first-p {
                 margin-top: 50px !important;
             }
 
             .contact-us a:first-child {
-                margin-top: 20px !important;
+                margin-top: 17px !important;
             }
 
             .contact-us a {
                 font-size: 17px !important;
-                margin-top: 20px;
+                margin-top: 12px;
+                margin-bottom: 30px !important;
             }
 
             .contact-us p {
                 font-size: 16px;
+            }
+
+            .contact-us .hide-on-phone {
+                display: none !important;
+            }
+
+            .contact-us a:last-child {
+                margin-top: 12px !important;
             }
         }
 
@@ -100,11 +124,11 @@
 
 <div class="container-fluid" style="background-color: #f9f9f9; min-height: 100vh; overflow: hidden">
 
-    <div class="row" style="padding-left: 30px; padding-right: 30px">
+    <div class="row contact-us-row">
 
         <center class="col-xs-12 contact-us">
 
-            <h1>ارتباط با ادمین</h1>
+            <h1>ارتباط با ما</h1>
 
             <p class="first-p">
                 ارتباط با ادمین گروه های
@@ -123,7 +147,7 @@
 
             <p>
                 ارتباط با ادمین گروه های
-                <br/>
+                <br class="hide-on-phone"/>
                 تتر و دلار استرالیا:
             </p>
             <a target="_blank" href="https://t.me/ExpoArz3">ExpoArz3</a>
@@ -133,13 +157,18 @@
             </p>
             <a target="_blank" href="https://t.me/ExpoArz">ExpoArz</a>
 
+            <p>
+                صفحه اینستاگرام اکسپو ارز
+            </p>
+            <a target="_blank" href="https://instagram.com/expoarz?igshid=YmMyMTA2M2Y=">ExpoArz</a>
+
         </center>
     </div>
 </div>
 
 <script>
     $(function(){
-        $("#navbar").load("nav.html?v=1.2", function () {
+        $("#navbar").load("nav.html?v=1.3", function () {
             $("#contactNav").addClass("selectedNav");
         });
     });

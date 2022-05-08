@@ -69,6 +69,7 @@ $(document).ready(function () {
     });
 
 });
+
 function fallbackCopyTextToClipboard(text) {
 
     var textArea = document.createElement("textarea");

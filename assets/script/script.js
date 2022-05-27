@@ -1,6 +1,9 @@
 var isDot = false;
 var isValid = false;
 var timer = null;
+var loadingTime = 300;
+
+var seller = true;
 
 var
     persianNumbers = [/۰/g, /۱/g, /۲/g, /۳/g, /۴/g, /۵/g, /۶/g, /۷/g, /۸/g, /۹/g],
@@ -165,7 +168,7 @@ function spinner(in1, in2) {
         $("#blur").addClass('hidden');
         $("#loader-div").addClass('hidden');
         doCalc(in1, in2);
-    }, 300);
+    }, loadingTime);
 
 }
 
@@ -310,7 +313,12 @@ function doCalc(in1, in2) {
     // $("#total").html(formatMoney(x));
     var karmozd = Math.ceil(x / 1000000) * karmozdRate;
 
-    setValue("result", formatMoney(Math.max(0, x - karmozd)));
+    if(seller)
+        x = x - karmozd;
+    else
+        x = x + karmozd;
+
+    setValue("result", formatMoney(Math.max(0, x)));
 
     $("#karmozd").val(formatMoney(karmozd));
 
@@ -346,7 +354,12 @@ function doCalcRev(result, in2) {
     var karmozd = Math.ceil(result / 1000000) * 2500;
     $("#karmozd").val(formatMoney(karmozd));
 
-    var x = parseInt(result) + parseInt(karmozd);
+    var x;
+    if(seller)
+        x = parseInt(result) + parseInt(karmozd);
+    else
+        x = parseInt(result) - parseInt(karmozd);
+
     // $("#total").html(formatMoney(x));
 
     if(in2.length === 0)
@@ -359,13 +372,45 @@ function doCalcRev(result, in2) {
 
 $(document).ready(function () {
 
+    var r = document.querySelector(':root');
+    var body = document.body,
+        html = document.documentElement;
+
+    var height = Math.max( body.scrollHeight, body.offsetHeight,
+        html.clientHeight, html.scrollHeight, html.offsetHeight );
+
+    r.style.setProperty('--height', height + "px");
+
     var firstChoice = $(".dropdown-item:first-child");
 
     $("#admin").attr("href", firstChoice.attr("data-href")).text(firstChoice.attr("data-contact"));
 
-    $(".dropdown-item").on("click", function () {
+    $(".btn-group > .btn-group:not(.complete) .dropdown-item").on("click", function () {
         $("#btnGroupDrop1Val").text($(this).text());
         $("#admin").attr("href", $(this).attr("data-href")).text($(this).attr("data-contact"));
+    });
+
+    $(".btn-group > .btn-group.complete .dropdown-item").on("click", function () {
+        seller = $(this).attr('data-role') === "seller";
+
+        if(seller) {
+            $("#youPay").empty().append("دریافتی خالص شما");
+            $("#karmozd-sign").removeClass('glyphicon-plus').addClass('glyphicon-minus');
+        }
+        else {
+            $("#youPay").empty().append("واریزی شما");
+            $("#karmozd-sign").removeClass('glyphicon-minus').addClass('glyphicon-plus');
+        }
+
+        $("#btnGroupDropVal2").text($(this).text());
+        values = [];
+        isDot = false;
+        isValid = false;
+        timer = null;
+        $("#in1").val("");
+        $("#in2").val("");
+        $("#karmozd").val("");
+        $("#result").val("");
     });
 
 });

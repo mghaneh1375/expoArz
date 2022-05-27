@@ -8,6 +8,7 @@
     --selectedColor: #04438A;
     --hoverColor: #60A9fC;
     --unSelectedColor: #d3E2F2;
+    --height: 100vh;
 }
 
 input {
@@ -114,7 +115,7 @@ body {
 .blur {
     position: absolute;
     top: 0;
-    height: calc(100%);
+    height: var(--height);
     width: 100%;
     left: 0;
     background-color: rgba(166,166,166,0.72);

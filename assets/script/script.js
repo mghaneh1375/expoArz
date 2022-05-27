@@ -381,7 +381,7 @@ $(document).ready(function () {
 
     r.style.setProperty('--height', height + "px");
 
-    var firstChoice = $(".dropdown-item:first-child");
+    var firstChoice = $("#currencies .dropdown-item:first-child");
 
     $("#admin").attr("href", firstChoice.attr("data-href")).text(firstChoice.attr("data-contact"));
 

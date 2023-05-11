@@ -2,9 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="./assets/css/font.css" />
+    <link rel="stylesheet" href="./assets/css/font.css?v=1.1" />
     <link rel="stylesheet" href="./assets/css/style.css?v=1.9" />
-    <link rel="stylesheet" href="./assets/css/calc.css?v=1.2" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
@@ -122,135 +121,106 @@
       gtag("config", "G-YCKEKE3CDM");
     </script>
     <style>
-      .contact-us {
-        padding-left: 30px;
-        padding-right: 30px;
+      .link_div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: min(100%, 400px);
+        margin: 20px auto;
       }
 
-      .contact-us p {
-        margin-top: 20px;
-        height: auto;
+      .full-width-page .link_div:nth-child(3) {
+        margin-top: 60px;
       }
 
-      .contact-us .first-p {
-        margin-top: 70px !important;
+      .full-width-page {
+        margin-top: 100px;
+        font-family: var(--fontFamily) !important;
       }
 
-      .contact-us a {
-        font-size: 19px;
-        font-weight: bold;
-        display: block;
-        margin-top: 20px;
-        margin-bottom: 40px;
+      .full-width-page h1 {
+        margin: 40px auto;
+        text-align: center;
       }
 
-      .contact-us a:last-child {
-        margin-top: 20px !important;
+      .full-width-page h4 {
+        margin: 20px auto;
+        text-align: center;
       }
 
-      @media only screen and (max-width: 767px) {
-        .contact-us-row .col-xs-12 {
-          padding-left: 0 !important;
-          padding-right: 0 !important;
-        }
-
-        .contact-us-row {
-          padding-right: 5px !important;
-          padding-left: 5px !important;
-        }
-
-        .contact-us .first-p {
-          margin-top: 50px !important;
-        }
-
-        .contact-us a:first-child {
-          margin-top: 17px !important;
-        }
-
-        .contact-us a {
-          font-size: 17px !important;
-          margin-top: 12px;
-          margin-bottom: 30px !important;
-        }
-
-        .contact-us p {
-          font-size: 16px;
-        }
-
-        .contact-us .hide-on-phone {
-          display: none !important;
-        }
-
-        .contact-us a:last-child {
-          margin-top: 12px !important;
+      @media only screen and (max-width: 430px) {
+        .full-width-page {
+          padding: 10px;
         }
       }
     </style>
   </head>
 
   <body>
-    <a id="logo" href="./index.html"><img src="./assets/images/logo.png" /></a>
+    <div class="container-fluid">
+      <a id="logo" href="./index.html"
+        ><img src="./assets/images/logo.png"
+      /></a>
 
-    <nav id="navbar" class="navbar"></nav>
+      <nav id="navbar" class="navbar"></nav>
 
-    <div
-      class="container-fluid"
-      style="background-color: #f9f9f9; min-height: 100vh; overflow: hidden"
-    >
-      <div class="row contact-us-row">
-        <center class="col-xs-12 contact-us">
-          <h1>ارتباط با ما</h1>
-
-          <p class="first-p">نرخ لحظه ای ارز در اروپا</p>
-
-          <a target="_blank" href="https://t.me/ExpoArzRate">ExpoArzRate</a>
-
-          <p>
-            ارتباط با ادمین گروه های
-            <br />
-            کرون نروژ، کرون سوئد و کرون دانمارک:
-          </p>
-
-          <a
-            style="margin-bottom: 10px"
-            target="_blank"
-            href="https://t.me/ExpoArz1"
-            >ExpoArz1</a
+      <div class="full-width-page">
+        <h1>نحوه عضویت در اکسپوارز</h1>
+        <h4>
+          لطفا برای درخواست عضویت در گروه های اکسپو ارز روی لینک مورد نظر کلیک
+          کنید.
+        </h4>
+        <div class="link_div">
+          <p>کرون نروژ</p>
+          <a href="https://t.me/+RQsuBYbYHkpkNDdk" target="_"
+            >https://t.me/+RQsuBYbYHkpkNDdk</a
           >
-          <a target="_blank" href="https://t.me/ExpoArz4"> (کمکی) ExpoArz4</a>
-
-          <p>
-            ارتباط با ادمین گروه های
-            <br />
-            یورو، پوند و دلار کانادا و دلار آمریکا و لیر ترکیه:
-          </p>
-          <a target="_blank" href="https://t.me/ExpoArz2">ExpoArz2</a>
-
-          <p>
-            ارتباط با ادمین گروه های
-            <br class="hide-on-phone" />
-            تتر و دلار استرالیا:
-          </p>
-          <a target="_blank" href="https://t.me/ExpoArz3">ExpoArz3</a>
-
-          <p>کانال اطلاع رسانی اکسپو ارز</p>
-          <a target="_blank" href="https://t.me/ExpoArz">ExpoArz</a>
-
-          <p>صفحه اینستاگرام اکسپو ارز</p>
-          <!--            <a target="_blank" href="https://instagram.com/expoarz?igshid=YmMyMTA2M2Y=">ExpoArz</a>-->
-          <a
-            target="_blank"
-            href="instagram://user?username=expoarz&igshid=YmMyMTA2M2Y="
-            >ExpoArz</a
+        </div>
+        <div class="link_div">
+          <p>کرون سوئد</p>
+          <a href="https://t.me/+5d8yQfqz4-RmZWY0" target="_"
+            >https://t.me/+5d8yQfqz4-RmZWY0</a
           >
-        </center>
+        </div>
+        <div class="link_div">
+          <p>کرون دانمارک</p>
+          <a href="https://t.me/+X2v-tLyRJ1xhZTNk" target="_"
+            >https://t.me/+X2v-tLyRJ1xhZTNk</a
+          >
+        </div>
+        <div class="link_div">
+          <p>پوند انگلیس</p>
+          <a href="https://t.me/+pblAXxYjE5c0YzRk" target="_"
+            >https://t.me/+pblAXxYjE5c0YzRk</a
+          >
+        </div>
+        <div class="link_div">
+          <p>یورو</p>
+          <a href="https://t.me/+bHpAPideUbk5MmZk" target="_"
+            >https://t.me/+bHpAPideUbk5MmZk</a
+          >
+        </div>
+
+        <div class="link_div">
+          <p>دلار آمریکا</p>
+          <a href="https://t.me/+u5HoSfbGEmQ4Yjhk" target="_"
+            >https://t.me/+u5HoSfbGEmQ4Yjhk</a
+          >
+        </div>
+
+        <div class="link_div">
+          <p>دلار کانادا</p>
+          <a href="https://t.me/+i3x4Ps9Bu_pmY2U0" target="_"
+            >https://t.me/+i3x4Ps9Bu_pmY2U0</a
+          >
+        </div>
       </div>
     </div>
 
     <script>
       $(function () {
         $("#navbar").load("nav.html?v=1.3", function () {
-          $("#contactNav").addClass("selectedNav");
+          $("#groupsNav").addClass("selectedNav");
         });
       });
     </script>

@@ -169,7 +169,7 @@ body {
     min-height: 80px !important;
   }
 
-  @media only screen and (max-width: 390px) {
+  @media only screen and (max-width: 400px) {
     #logo {
       margin-left: 0 !important;
       top: 7px !important;
@@ -177,6 +177,10 @@ body {
 
     #logo img {
       width: 65px !important;
+    }
+
+    .nav > li > a {
+      font-size: 0.65em !important;
     }
   }
 }

@@ -198,6 +198,10 @@
 }
 
 @media only screen and (max-width: 767px) {
+  .row {
+    margin-left: unset !important;
+    margin-right: unset !important;
+  }
   .content h1 {
     font-size: 23px !important;
   }

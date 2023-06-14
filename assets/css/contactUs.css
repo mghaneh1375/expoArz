@@ -1,0 +1,74 @@
+.contact-us-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 100px;
+  row-gap: 50px;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  margin: 50px auto;
+  max-width: min(calc(100% - 60px), 1200px);
+}
+
+.card {
+  width: 280px;
+  height: 180px;
+  padding: 10px;
+  box-shadow: -5px 5px 10px 0px #6d6d6d;
+  position: relative;
+}
+
+.card > .links {
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  text-align: center;
+}
+
+.card > .links > a {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.card > .images {
+  position: absolute;
+  bottom: -20px;
+  z-index: 2;
+  direction: ltr;
+  left: 0;
+}
+
+.card > .images img {
+  height: 40px;
+  margin-left: -25px;
+}
+
+.card:nth-child(3) > .images img {
+  height: 35px;
+  margin-left: -30px;
+}
+
+.card:nth-child(3) > .images img:nth-child(4) {
+  margin-left: -25px;
+}
+.card:nth-child(3) > .images img:nth-child(5) {
+  margin-left: -25px;
+}
+
+.card:nth-child(4) > .images img {
+  height: 35px;
+  margin-left: -30px;
+}
+
+.card > .images img:first-child {
+  margin-left: 0;
+}
+
+.card:nth-child(5) > .images img {
+  margin-left: -15px;
+}
+
+.card:nth-child(6) > .images img {
+  margin-left: -5px;
+}

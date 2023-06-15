@@ -1,0 +1,189 @@
+.card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 50px;
+  row-gap: 20px;
+  margin: 0 auto;
+}
+
+.card {
+  width: 200px;
+  height: 100px;
+  padding: 10px 15px;
+  color: white;
+}
+
+.card > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.card > div:nth-child(2) > div p {
+  margin-bottom: 0;
+  direction: ltr;
+}
+
+.card > div:nth-child(2) > div {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+
+.card > div:nth-child(2) {
+  margin-top: 20px;
+}
+
+.card > div > img {
+  width: 14px;
+  height: 14px;
+  align-self: center;
+}
+
+.card > div > .title,
+.card > div > .price {
+  font-size: 16px;
+}
+
+.card > div > .percent-change,
+.card > div > .amount-change {
+  font-size: 14px;
+}
+
+.minus-card {
+  background-color: #bb0a0a;
+}
+
+.positive-card {
+  background-color: #146d46;
+}
+
+.calc-div {
+  background-color: #dfeaee;
+  box-shadow: -5px 5px 10px 0px #6d6d6d;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.calc-div > .btn-group:nth-child(2) {
+  margin-left: -20px;
+  margin-right: -20px;
+  width: calc(100% + 40px);
+}
+
+.calc-div h3 {
+  text-align: center;
+}
+
+.calc-div-container {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  margin-top: 20px;
+}
+.calc-div-container > p {
+  padding: 20px;
+  max-width: 300px;
+  font-size: 16px;
+}
+
+.calc-div .btn-group {
+  width: 100%;
+}
+
+.calc-div > .btn-group button {
+  width: 50%;
+  background-color: #b6becb;
+  font-size: 18px;
+}
+
+.calc-div > .btn-group button.selected {
+  background-color: #25714b;
+  color: white;
+}
+
+.calc-div h4 {
+  text-align: right;
+  margin-top: 15px;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.calc-div > .btn-group > .btn-group {
+  margin-top: 0 !important;
+}
+
+.calc-div > .btn-group > .btn-group > .select {
+  width: unset;
+  border-radius: 7px !important;
+  background-color: white;
+  font-size: 16px;
+  height: 35px;
+  width: 120px;
+  padding: 4px;
+}
+
+.calc-div > .btn-group > .btn-group > .select > .caret {
+  border-top: 6px dashed !important;
+  border-left: 6px solid transparent !important;
+  border-right: 6px solid transparent !important;
+  margin-right: 10px;
+}
+
+.calc-div .btn-group input {
+  border: none;
+  border-radius: 7px;
+}
+
+.calc-div .btn-group button:nth-child(2) {
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+.calc-div .btn-group button:nth-child(1) {
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+}
+
+.dropdown-menu {
+  width: 120px;
+  direction: rtl;
+  min-width: unset !important;
+}
+
+.dropdown-menu a {
+  color: unset;
+  display: block;
+  text-align: right;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.dropdown-menu a:hover {
+  text-decoration: none !important;
+}
+
+@media only screen and (max-width: 770px) {
+  .card-container {
+    max-width: calc(100% - 60px);
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .calc-div-container {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 0;
+  }
+  .calc-div-container > p {
+    max-width: none;
+  }
+}

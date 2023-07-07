@@ -1,0 +1,28 @@
+.card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 50px;
+  margin-top: 20px;
+}
+
+.card {
+  width: 360px;
+  position: relative;
+}
+
+.card img:nth-child(1) {
+  width: 170px;
+}
+
+.card img:nth-child(4) {
+  width: 30px;
+  position: absolute;
+  left: 65px;
+  top: calc(50% - 85px);
+}
+
+.card p {
+  margin-top: 20px;
+  max-width: 260px;
+}

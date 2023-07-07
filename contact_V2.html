@@ -220,11 +220,15 @@
       </div>
     </div>
 
+    <footer id="footer"></footer>
+
     <script>
       $(function () {
-        $("#navbar").load("nav.html?v=1.5", function () {
+        $("#navbar").load("nav.html?v=1.6", function () {
           $("#contactNav").addClass("selectedNav");
         });
+
+        $("#footer").load("footer.html?v=1.1", function () {});
       });
     </script>
   </body>

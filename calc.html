@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./assets/css/font.css" />
+    <link rel="stylesheet" href="./assets/css/style_V2.css?v=1.1" />
+    <link rel="stylesheet" href="./assets/css/common_V2.css?v=1.2" />
+    <link rel="stylesheet" href="./assets/css/calc_V2.css?v=2.2" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="./assets/images/logo.png" />
+    <title>اکسپو ارز</title>
+
+    <meta property="og:title" content="اکسپو ارز" />
+    <meta property="og:url" content="https://expoarz.com/" />
+
+    <meta name="description" content="محاسبه کارمزد اکسپو ارز" />
+    <meta name="og:description" content="محاسبه کارمزد اکسپو ارز" />
+
+    <meta
+      property="og:image"
+      itemprop="image"
+      content="https://expoarz.com/assets/images/ms-icon-144x144.png"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="310" />
+    <meta property="og:image:height" content="310" />
+
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:type" content="website" />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="./assets/images/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="./assets/images/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="./assets/images/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="./assets/images/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="./assets/images/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="./assets/images/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="./assets/images/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="./assets/images/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/images/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./assets/images/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="./assets/images/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./assets/images/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-YCKEKE3CDM"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-YCKEKE3CDM");
+    </script>
+  </head>
+
+  <body>
+    <nav id="navbar" class="navbar"></nav>
+    <div class="container-fluid">
+      <div class="full-width-page">
+        <div class="calc-div-container">
+          <p>
+            به کمک محاسبه‌گر اکسپو ارز می‌توانید قبل از انجام معامله، کارمزد و
+            همچنین رقم نهایی دریافتی/پرداختی را ملاحظه نمایید.
+          </p>
+
+          <div class="calc-div">
+            <h3>محاسبه‌گر اکسپو ارز</h3>
+
+            <div class="btn-group">
+              <div class="btn-group complete">
+                <button id="buyerModeBtn" class="modeBtn btn btn-secondary">
+                  <span>خریدار</span>
+                </button>
+
+                <button
+                  id="sellerModeBtn"
+                  class="modeBtn btn btn-secondary selected"
+                >
+                  <span>فروشنده</span>
+                </button>
+              </div>
+            </div>
+
+            <h4>مقدار ارز</h4>
+
+            <div class="btn-group">
+              <input
+                tabindex="1"
+                style="width: 180px"
+                onkeydown="return del(event, 'in1')"
+                onkeyup="isNumberInPhone(event, 'in1'); calc()"
+                id="in1"
+                type="text"
+              />
+
+              <div class="btn-group" role="group" style="width: unset">
+                <button
+                  id="btnGroupDrop1"
+                  type="button"
+                  class="btn btn-secondary dropdown-toggle select"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <span id="btnGroupDrop1Val">کرون نروژ</span>
+                  <span class="caret"></span>
+                </button>
+                <div
+                  id="currencies"
+                  class="dropdown-menu"
+                  aria-labelledby="btnGroupDrop1"
+                >
+                  <a
+                    data-href="https://t.me/ExpoArz1"
+                    data-contact="ارتباط با ادمین کرون نروژ"
+                    class="dropdown-item"
+                    >کرون نروژ</a
+                  >
+                  <a
+                    data-href="https://t.me/ExpoArz1"
+                    data-contact="ارتباط با ادمین کرون سوئد"
+                    class="dropdown-item"
+                    >کرون سوئد</a
+                  >
+                  <a
+                    data-href="https://t.me/ExpoArz1"
+                    data-contact="ارتباط با ادمین کرون دانمارک"
+                    class="dropdown-item"
+                    >کرون دانمارک</a
+                  >
+                  <a
+                    data-href="https://t.me/ExpoArz2"
+                    data-contact="ارتباط با ادمین یورو"
+                    class="dropdown-item"
+                    >یورو</a
+                  >
+                  <a
+                    data-href="https://t.me/ExpoArz2"
+                    data-contact="ارتباط با ادمین پوند"
+                    class="dropdown-item"
+                    >پوند</a
+                  >
+                  <a
+                    data-href="https://t.me/ExpoArz3"
+                    data-contact="ارتباط با ادمین دلار استرالیا"
+                    class="dropdown-item"
+                    >دلار استرالیا</a
+                  >
+                  <a
+                    data-href="https://t.me/ExpoArz2"
+                    data-contact="ارتباط با ادمین دلار کانادا"
+                    class="dropdown-item"
+                    >دلار کانادا</a
+                  >
+                  <a
+                    data-href="https://t.me/ExpoArz2"
+                    data-contact="ارتباط با ادمین دلار آمریکا"
+                    class="dropdown-item"
+                    >دلار آمریکا</a
+                  >
+                  <a
+                    data-href="https://t.me/ExpoArz2"
+                    data-contact="ارتباط با ادمین لیر"
+                    class="dropdown-item"
+                    >لیر</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <h4>نرخ توافق شده</h4>
+
+            <div
+              class="btn-group"
+              role="group"
+              aria-label="Button group with nested dropdown"
+            >
+              <input
+                tabindex="2"
+                onkeydown="return del(event, 'in2')"
+                onkeyup="isJustNumberInPhone(event, 'in2'); calc()"
+                id="in2"
+                type="text"
+              />
+
+              <span>تومان</span>
+            </div>
+
+            <h4>کارمزد</h4>
+            <p style="text-align: center; font-size: 18px">
+              <span id="karmozd">-</span>
+              <span class="hidden" id="karmozdToman">تومان</span>
+            </p>
+            <!-- <div
+                class="btn-group"
+                role="group"
+                aria-label="Button group with nested dropdown"
+              >
+                <input readonly id="karmozd" type="text" />
+                <span>تومان</span>
+              </div> -->
+
+            <h4 id="youPay">دریافتی</h4>
+            <p style="text-align: center; font-size: 18px">
+              <span id="result">-</span>
+              <span class="hidden" id="resultToman">تومان</span>
+            </p>
+            <!-- <div
+                class="btn-group"
+                role="group"
+                aria-label="Button group with nested dropdown"
+              >
+                <input
+                  tabindex="3"
+                  id="result"
+                  onkeydown="return del(event, 'result')"
+                  onkeyup="isJustNumberInPhone(event, 'result'); calcRev()"
+                  type="text"
+                />
+                <span>تومان</span>
+              </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer id="footer"></footer>
+
+    <div id="blur" class="blur hidden"></div>
+
+    <div id="loader-div" class="loader-div hidden">
+      <div id="loader" class="loader"></div>
+    </div>
+
+    <script src="assets/script/script.js?v=2.7"></script>
+
+    <script>
+      $(function () {
+        $("#navbar").load("nav.html?v=1.6", function () {
+          $("#calcNav").addClass("selectedNav");
+        });
+        $("#footer").load("footer.html?v=1.1", function () {});
+      });
+    </script>
+  </body>
+</html>

@@ -28,3 +28,37 @@
     margin-top: 140px;
   }
 }
+
+.container-fluid {
+  min-height: calc(100vh - 158px);
+}
+
+footer {
+  display: flex !important;
+  background-color: #021943;
+  justify-content: space-between;
+  padding: 40px 20px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+footer > div {
+  display: flex;
+  flex-direction: column;
+}
+
+footer > div > div {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+footer > div > p {
+  color: white;
+  font-family: var(--fontFamily) !important;
+}
+
+footer > div img {
+  width: 30px;
+}

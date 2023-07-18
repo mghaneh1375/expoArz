@@ -7,6 +7,10 @@
 }
 
 .card {
+  position: relative;
+}
+
+.card:not(:nth-child(3)):not(:nth-child(6)) {
   width: 360px;
   position: relative;
 }
@@ -15,7 +19,7 @@
   width: 170px;
 }
 
-.card img:nth-child(4) {
+.card img:nth-child(3) {
   width: 30px;
   position: absolute;
   left: 65px;
@@ -25,4 +29,117 @@
 .card p {
   margin-top: 20px;
   max-width: 260px;
+}
+
+.slider {
+  width: calc(100% - 50px);
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider img {
+  vertical-align: middle;
+  height: 60vh;
+  margin-top: 20px;
+}
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  padding: 16px;
+  margin-top: -50px;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+}
+.prev {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  text-decoration: none;
+}
+
+.slider .row img {
+  width: 100%;
+  height: 10px;
+}
+
+.slider .row {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  justify-content: center;
+  direction: ltr;
+}
+
+.slider .row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.slider .column {
+  float: left;
+  width: 10px;
+}
+
+.slider .column .active {
+  content: url("./../images/fill-bubble.png");
+}
+
+.caption-container {
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 1010px) {
+  .card:not(:nth-child(3)):not(:nth-child(6)) {
+    width: 320px;
+  }
+}
+
+@media only screen and (max-width: 1010px) {
+  .card:not(:nth-child(3)):not(:nth-child(6)) {
+    width: 290px;
+  }
+  .card img:nth-child(3) {
+    left: 40px;
+  }
+}
+
+@media only screen and (max-width: 870px) {
+  #web-card-container {
+    display: none;
+  }
+
+  #phone-card-container {
+    display: flex !important;
+  }
 }

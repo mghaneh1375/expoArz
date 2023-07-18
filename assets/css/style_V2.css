@@ -120,13 +120,74 @@ body {
   z-index: 100000000 !important;
 }
 
-@media only screen and (max-width: 830px) {
+.hamber-menu {
+  width: 30px;
+  cursor: pointer;
+  margin: 10px 20px;
+  display: none;
+}
+
+.cancel-menu {
+  width: 20px;
+  cursor: pointer;
+  margin: 20px 30px;
+}
+
+.menu-container {
+  background-color: var(--main-color);
+  position: fixed;
+  top: 100px;
+  width: 100%;
+  right: 0;
+  height: calc(100vh - 100px);
+  color: white;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s linear;
+  list-style: none;
+  padding-right: 40px;
+  padding-top: 20px;
+}
+
+.menu-container li {
+  margin-top: 15px;
+}
+
+.menu-container li a {
+  position: relative;
+}
+
+.active-menu-container {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media only screen and (max-width: 1120px) {
+  .navbar ul {
+    gap: 10px;
+  }
+}
+
+@media only screen and (max-width: 975px) {
   .navbar ul {
     gap: unset;
+  }
+  .navbar ul li {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 830px) {
+  .navbar ul li {
+    font-size: 14px;
   }
 }
 
 @media only screen and (max-width: 767px) {
+  .nav > li > a {
+    padding: 10px 10px !important;
+  }
+
   .navbar ul {
     display: block;
     margin-right: 0;
@@ -167,6 +228,13 @@ body {
     min-height: 80px !important;
   }
 
+  @media only screen and (max-width: 685px) {
+    .nav > li > a {
+      font-size: 13px !important;
+      padding: 10px 5px !important;
+    }
+  }
+
   @media only screen and (max-width: 625px) {
     .nav > li > a {
       font-size: 0.85em !important;
@@ -180,12 +248,32 @@ body {
   }
 
   @media only screen and (max-width: 500px) {
+    .hamber-menu {
+      display: block;
+    }
+
     #logo img {
       width: 65px !important;
     }
 
     .nav > li > a {
       padding: 10px 7px !important;
+    }
+
+    .navbar-right {
+      display: none !important;
+    }
+
+    .menu-container .selectedNav::after {
+      content: ""; /* required to display pseudo elements */
+      height: 4px; /* this works like a border-width */
+      width: auto; /* you can use a percentage of parent or fixed px value */
+      background: #f6891c; /* the color of border */
+      position: absolute;
+      margin: 0 auto;
+      left: unset;
+      top: 30px;
+      right: 0; /* horizontal centering */
     }
   }
 

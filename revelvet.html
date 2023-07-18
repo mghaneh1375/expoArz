@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="./assets/css/font.css" />
-    <link rel="stylesheet" href="./assets/css/style_V2.css?v=2.0" />
+    <link rel="stylesheet" href="./assets/css/style_V2.css?v=2.1" />
     <link rel="stylesheet" href="./assets/css/common_V2.css?v=2.0" />
-    <link rel="stylesheet" href="./assets/css/revelvet.css?v=1.0" />
+    <link rel="stylesheet" href="./assets/css/revelvet.css?v=2.1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
@@ -131,58 +131,150 @@
       <div class="full-width-page">
         <p>آموزش تبدیل و انتقال ارز بوسیله ریولوت در زیر ارایه شده است.</p>
 
-        <div class="card-container">
+        <div id="phone-card-container" class="slider hidden">
+          <div class="mySlides">
+            <img src="./assets/images/t1.png" />
+          </div>
+
+          <div class="mySlides">
+            <img src="./assets/images/t2.png" />
+          </div>
+
+          <div class="mySlides">
+            <img src="./assets/images/t3.png" />
+          </div>
+
+          <div class="mySlides">
+            <img src="./assets/images/t4.png" />
+          </div>
+
+          <div class="mySlides">
+            <img src="./assets/images/t5.png" />
+          </div>
+
+          <div class="mySlides">
+            <img src="./assets/images/t6.png" />
+          </div>
+
+          <a class="prev" onclick="plusSlides(1)">❮</a>
+          <a class="next" onclick="plusSlides(-1)">❯</a>
+
+          <div class="row">
+            <div class="column">
+              <img
+                class="demo cursor"
+                src="./assets/images/bubble.png"
+                onclick="currentSlide(1)"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="demo cursor"
+                src="./assets/images/bubble.png"
+                onclick="currentSlide(2)"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="demo cursor"
+                src="./assets/images/bubble.png"
+                onclick="currentSlide(3)"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="demo cursor"
+                src="./assets/images/bubble.png"
+                onclick="currentSlide(4)"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="demo cursor"
+                src="./assets/images/bubble.png"
+                onclick="currentSlide(5)"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="demo cursor"
+                src="./assets/images/bubble.png"
+                onclick="currentSlide(6)"
+              />
+            </div>
+          </div>
+
+          <div class="caption-container">
+            <p id="caption"></p>
+          </div>
+        </div>
+
+        <div id="web-card-container" class="card-container">
           <div class="card">
             <img src="./assets/images/t1.png" />
-            <p>مرحله ۱: آغاز</p>
-            <p>
-              مطابق شکل، ابتدا در صفحه Hjem، با استفاده از گزینه sett inn
-              penger، حساب خود را شارژ نمایید.
-            </p>
+            <div id="caption-1">
+              <p>مرحله ۱: آغاز</p>
+              <p>
+                مطابق شکل، ابتدا در صفحه Hjem، با استفاده از گزینه sett inn
+                penger، حساب خود را شارژ نمایید.
+              </p>
+            </div>
             <img src="./assets/images/left-arrow.png" />
           </div>
           <div class="card">
             <img src="./assets/images/t2.png" />
-            <p>مرحله ۲: تبدیل ارز</p>
-            <p>
-              سپس با استفاده از گزینه veksling یا exchange، کرون را به ارز مورد
-              نظر خود تبدلی کنید.
-            </p>
+            <div id="caption-2">
+              <p>مرحله ۲: تبدیل ارز</p>
+              <p>
+                سپس با استفاده از گزینه veksling یا exchange، کرون را به ارز
+                مورد نظر خود تبدلی کنید.
+              </p>
+            </div>
             <img src="./assets/images/left-arrow.png" />
           </div>
           <div class="card">
             <img src="./assets/images/t3.png" />
-            <p>مرحله ۳: شروع انتقال ارز</p>
-            <p>
-              مطابق شکل، در پایین صفحه بر روی overføring یا payment بزنید و سپس
-              گزینه nyhet یا new رو انتخاب کنید.
-            </p>
+            <div id="caption-3">
+              <p>مرحله ۳: شروع انتقال ارز</p>
+              <p>
+                مطابق شکل، در پایین صفحه بر روی overføring یا payment بزنید و
+                سپس گزینه nyhet یا new رو انتخاب کنید.
+              </p>
+            </div>
           </div>
           <div class="card">
             <img src="./assets/images/t4.png" />
-            <p>مرحله ۴: انتخاب نوع انتقال</p>
-            <p>
-              در صفحه باز شده، گزینه Bankmottaker یا Bankpayment را انتخاب
-              نمایید.
-            </p>
+            <div id="caption-4">
+              <p>مرحله ۴: انتخاب نوع انتقال</p>
+              <p>
+                در صفحه باز شده، گزینه Bankmottaker یا Bankpayment را انتخاب
+                نمایید.
+              </p>
+            </div>
+
             <img src="./assets/images/left-arrow.png" />
           </div>
           <div class="card">
             <img src="./assets/images/t5.png" />
-            <p>مرحله ۵: وارد کردن مشخصات گیرنده وجه</p>
-            <p>
-              در صفحه باز شده، در سطر اول کشور مقصد را انتخاب و در سطر دوم ارز
-              مقصد، سطر سوم ibanو سطرهای بعدی نام گیرنده را وارد و ثبت نمایید.
-            </p>
+            <div id="caption-5">
+              <p>مرحله ۵: وارد کردن مشخصات گیرنده وجه</p>
+              <p>
+                در صفحه باز شده، در سطر اول کشور مقصد را انتخاب و در سطر دوم ارز
+                مقصد، سطر سوم ibanو سطرهای بعدی نام گیرنده را وارد و ثبت نمایید.
+              </p>
+            </div>
+
             <img src="./assets/images/left-arrow.png" />
           </div>
           <div class="card">
             <img src="./assets/images/t6.png" />
-            <p>مرحله ۶: وارد کردن مقدار ارز و نهایی کردن انتقال</p>
-            <p>
-              در مرحله آخر، مقدار ارز مورد نظر و در سطر پایین هم رفرنس را و وارد
-              و تراکنش را ارسال نمایید.
-            </p>
+            <div id="caption-6">
+              <p>مرحله ۶: وارد کردن مقدار ارز و نهایی کردن انتقال</p>
+              <p>
+                در مرحله آخر، مقدار ارز مورد نظر و در سطر پایین هم رفرنس را و
+                وارد و تراکنش را ارسال نمایید.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -192,12 +284,53 @@
 
     <script>
       $(function () {
-        $("#navbar").load("nav.html?v=1.6", function () {
+        $("#navbar").load("nav.html?v=1.7", function () {
           $("#revelvetNav").addClass("selectedNav");
+          $("#revelvetNavMobile").addClass("selectedNav");
         });
 
         $("#footer").load("footer.html?v=1.1", function () {});
       });
+    </script>
+    <script>
+      let slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
+
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
+
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("demo");
+        let captionText = document.getElementById("caption");
+
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+
+        let currentCaptionText = document.getElementById(
+          "caption-" + slideIndex
+        );
+
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        captionText.innerHTML = currentCaptionText.innerHTML;
+      }
     </script>
   </body>
 </html>

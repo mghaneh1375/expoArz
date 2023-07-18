@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="./assets/css/font.css" />
-    <link rel="stylesheet" href="./assets/css/style_V2.css?v=1.1" />
+    <link rel="stylesheet" href="./assets/css/style_V2.css?v=1.3" />
     <link rel="stylesheet" href="./assets/css/common_V2.css?v=1.2" />
-    <link rel="stylesheet" href="./assets/css/index_V2.css?v=2.2" />
+    <link rel="stylesheet" href="./assets/css/index_V2.css?v=2.3" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
@@ -168,7 +168,7 @@
                 <p class="abbr">(GBP)</p>
               </div>
             </div>
-            <p class="price">۵۸،۲۰۰</p>
+            <p class="price">۵۸،۲۰۰ تومان</p>
           </div>
 
           <div class="card">
@@ -257,8 +257,9 @@
 
     <script>
       $(function () {
-        $("#navbar").load("nav.html?v=1.6", function () {
+        $("#navbar").load("nav.html?v=1.7", function () {
           $("#indexNav").addClass("selectedNav");
+          $("#indexNavMobile").addClass("selectedNav");
         });
         $("#footer").load("footer.html?v=1.1", function () {});
       });
